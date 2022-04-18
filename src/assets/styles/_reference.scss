@@ -1,0 +1,38 @@
+.refer__cont {
+    background-color: var(--black);
+    min-height: 100vh;
+}
+.refer__inner {
+    h2 {
+        color: var(--black);
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    table {
+        border-top: 1px solid var(--black);
+        border-bottom: 2px solid var(--black);
+        color: var(--black);
+        td {
+            border-top: 1px solid var(--black);
+            padding: 1.4rem 0;
+            font-family: var(--subKor_font);
+            font-weight: 300;
+        }
+    }
+}
+
+.refer__cont.light {
+    background-color: var(--light_bg);
+}
+@media (max-width: 1100px){
+    .refer__cont {
+        margin: 0 auto;
+        width: 95%;
+    }
+}
+@media (max-width: 600px){
+    .refer__cont {
+        margin: 0 auto;
+        width: 100%;
+    }
+}

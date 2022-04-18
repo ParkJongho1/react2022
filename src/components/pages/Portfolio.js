@@ -1,22 +1,22 @@
 import React from "react";
-import Header from "../includes/Header";
-import Contents from "../includes/Contents"
-// import Footer from "../includes/Footer";
-import ContTitle from "../includes/ContTitle";
+import Header from "../layout/Header";
+import Contents from "../layout/Contents"
+import Footer from "../layout/Footer";
+import ContTitle from "../layout/Title";
 import PortCont from "../includes/PortCont";
-import ContContact from "../includes/ContContact";
+import ContContact from "../layout/Contact";
 
 
 function Portfolio(){
     return(
         <>
-            <Header />
+            <Header  color="light" />
             <Contents>
                 <ContTitle title={["PORTFOLIO","SITE"]} />
                 <PortCont />
                 <ContContact />
             </Contents>
-            {/* <Footer /> */}
+            <Footer />
         </>
     )
 }

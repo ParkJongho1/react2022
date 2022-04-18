@@ -1,20 +1,21 @@
 import React from "react";
-import Header from "../includes/Header";
-import Contents from "../includes/Contents"
-import Footer from "../includes/Footer";
+import Header from "../layout/Header";
+import Contents from "../layout/Contents"
+import Footer from "../layout/Footer";
+import ContTitle from "../layout/Title";
+import ContContact from "../layout/Contact";
+import ScriptCont from "../includes/ScriptCont";
 
 function Script(){
     return(
         <>
-            <Header />
+            <Header color="light" />
             <Contents>
-                <section className="script__cont">
-                    <div className="script__inner">
-                        <div>Script</div>
-                    </div>
-                </section>
+                <ContTitle title={["Script","Javascript", "light"]}/>
+                <ScriptCont />
+                <ContContact />
             </Contents>
-            <Footer />
+            <Footer  color="light" />
         </>
     )
 }

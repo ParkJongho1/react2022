@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "../includes/Header";
-import Contents from "../includes/Contents"
-import Footer from "../includes/Footer";
+import Header from "../layout/Header";
+import Contents from "../layout/Contents"
+import Footer from "../layout/Footer";
 import MainCont from "../includes/MainCont";
 
 function Main(){
