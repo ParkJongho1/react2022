@@ -29,6 +29,22 @@
     color: var(--black);
 }
 
+//타이틀 애니메이션
+.cont__title {
+
+    strong {
+        display: block;
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    em {
+        display: block;
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    
+}
+
 // cont__contact
 .cont__contact {
     height: 100vh;
@@ -61,6 +77,13 @@
         border: 1px solid var(--white);
         border-radius: 50px;
         padding: 1vw 3vw;
+    }
+}
+
+@media (max-width: 1200px){
+    .cont__title {
+        text-align: center;
+        padding-bottom: 10vw;
     }
 }
 

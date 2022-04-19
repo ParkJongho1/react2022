@@ -9,6 +9,7 @@
     display: flex;
     align-items: center;
     font-family: "Rajdhani";
+    z-index: 1000;
 }
 .header__port {
     flex: 1 1 40%;
@@ -99,4 +100,9 @@
         background: rgba(255, 255, 255, 0.9);
         backdrop-filter: blur(40px);
     }
+}
+
+// header animaiton 
+#header {
+    top: -100%;
 }
