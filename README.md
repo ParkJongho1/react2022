@@ -5,5 +5,5 @@ npx create-react-app react2022
 
 ## json 
 
-https://parkjongho1.github.io/react2022/assets/json/reference.json
+https://parkjongho1.github.io/react2022/src/assets/json/reference.json
 
