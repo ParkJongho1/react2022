@@ -1,4 +1,6 @@
 {
+  "status": "ok",
+  "status_message": "Query was successful",
   "data": {
     "type": "html",
     "htmlRefer": [{
