@@ -32,31 +32,35 @@ class Main extends React.Component {
             gsap.to("#footer", {
                 duration: 0.8, 
                 bottom: 0,
-                delay: 1.0
+                delay: 0.8
             });
             gsap.to(".main__inner > div:nth-child(1)", {
                 duration: 0.8, 
                 opacity: 1,
                 y: 0,
-                delay: 2.0,
+                ease: "back.out(2.2)",
+                delay: 1.2,
             });
             gsap.to(".main__inner > div:nth-child(2)", {
                 duration: 0.8, 
                 opacity: 1,
                 y: 0,
-                delay: 2.5
+                ease: "back.out(2.2)",
+                delay: 1.6
             });
             gsap.to(".main__inner > div:nth-child(3)", {
                 duration: 0.8, 
                 opacity: 1,
                 y: 0,
-                delay: 3.0
+                ease: "back.out(2.2)",
+                delay: 2.0
             });
             gsap.to(".main__inner > div:nth-child(4)", {
                 duration: 0.8, 
                 opacity: 1,
                 y: 0,
-                delay: 3.5
+                ease: "back.out(2.2)",
+                delay: 2.4
             });
         }, 1000)
     }
@@ -72,6 +76,8 @@ class Main extends React.Component {
     componentDidMount(){
         setTimeout(() => { 
             document.getElementById("loading").classList.remove("loading__active");
+            document.querySelector("body").style.background = "#000";
+
             this.getMains();
         }, 2000);
     }

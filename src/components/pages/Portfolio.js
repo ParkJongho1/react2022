@@ -57,7 +57,7 @@ class Portfolio extends React.Component {
                 duration: 0.5, 
                 y: 0,
                 opacity: 1,
-                delay: 1.5
+                delay: 2.0
             });
         },10)
     }
@@ -79,6 +79,8 @@ class Portfolio extends React.Component {
         setTimeout(() => {
             console.log("첫번째 시작")
             document.getElementById("loading").classList.remove("loading__active");
+            document.querySelector("body").style.background = "#000";
+
             this.getPorts();
         }, 2000)
     }

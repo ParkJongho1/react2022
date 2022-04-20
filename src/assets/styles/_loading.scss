@@ -78,3 +78,11 @@ body {
     filter: blur(4px);
   }
 }
+
+#loading.light {
+  background: var(--light_bg);
+  
+  .loading__text span {
+    color: var(--black);
+  }
+}
