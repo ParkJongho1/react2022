@@ -7,6 +7,7 @@ import ContContact from "../layout/Contact";
 import ReferCont from "../includes/ReferCont";
 import Loading from "../basics/Loading";
 import { gsap } from "gsap";
+import axios from "axios";
 
 // function Reference(){
 //     return(
@@ -60,9 +61,14 @@ class Reference extends React.Component {
         },10)
     }
 
+    getJson = async () => {
+        const refer = await axios.get("");
+
+        console.log(refer);
+    }
+
     getRefers = () => {
         setTimeout(() => {
-            console.log("두번째 시작")
             this.setState({isLoading: false});
             this.getSite();
         }, 1600)
