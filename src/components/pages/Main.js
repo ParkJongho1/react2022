@@ -23,7 +23,7 @@ class Main extends React.Component {
         isLoading: true,
     }
 
-    getSite = () => {
+    mainAnimation = () => {
         setTimeout(() => {
             gsap.to("#header", {
                 duration: 0.8, 
@@ -69,7 +69,7 @@ class Main extends React.Component {
         setTimeout(() => {
             console.log("두번째 시작")
             this.setState({isLoading: false});
-            this.getSite();
+            this.mainAnimation();
         }, 1600)
     }
 

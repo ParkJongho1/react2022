@@ -28,7 +28,7 @@ class About extends React.Component {
         abouts: [],
     }
 
-    getSite = () => {
+    mainAnimation = () => {
         setTimeout(() => {
             gsap.to("#header", {
                 duration: 0.8, 
@@ -64,7 +64,7 @@ class About extends React.Component {
         setTimeout(() => {
             console.log("두번째 시작")
             this.setState({isLoading: false});
-            this.getSite();
+            this.mainAnimation();
         }, 1600)
     }
 
