@@ -61,17 +61,15 @@ class Reference extends React.Component {
         },10)
     }
 
-    getJson = async () => {
-        const refer = await axios.get("");
+    getRefers = async () => {
+        const {
+            data: {
+                data: {htmlRefer},
+            },
+         } = await axios.get("https://parkjongho1.github.io/react2022/src/assets/json/reference.json");
 
-        console.log(refer);
-    }
-
-    getRefers = () => {
-        setTimeout(() => {
-            this.setState({isLoading: false});
-            this.getSite();
-        }, 1600)
+        this.setState({refers: htmlRefer, isLoading: false})
+        this.getSite();
     }
 
     componentDidMount(){
@@ -83,24 +81,23 @@ class Reference extends React.Component {
     }
 
     render(){
-        const {isLoading, ports} = this.state;
+        const {isLoading, refers} = this.state;
 
-        console.log(ports)
-
+        console.log(refers)
         return (
             <>
            {isLoading ? (
                <Loading color="light" />
                ) : (
-                    <>
+                <>
                     <Header color="light"/>
                     <Contents>
                         <ContTitle title={["Reference","Book","light"]}/>
-                        <ReferCont color="light" />
+                        <ReferCont refers={refers} color="light" />
                         <ContContact />
                     </Contents>
                     <Footer  color="light"/>
-                    </>                   
+                </>                   
                )} 
             </>
         )
