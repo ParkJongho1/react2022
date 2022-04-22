@@ -2,6 +2,7 @@ import React from 'react';
 import Header from "../layout/Header";
 import Contents from "../layout/Contents";
 import Footer from "../layout/Footer";
+import { Link } from 'react-router-dom';
 import { gsap } from "gsap";
 
 // function ReferDetail(props) {
@@ -10,6 +11,30 @@ import { gsap } from "gsap";
 //     <div>ReferDetail</div>
 //   )
 // }
+
+function ReferDetailDefinition({Definition}) {
+  // console.log(Definition)
+  const rendering = () => {
+    const result = [];
+    for (let i = 0; i < Definition.length; i++) {
+      result.push(<li key={i}>{Definition[i]}</li>);
+    }
+    return result;
+  };
+  return rendering();
+}
+
+function ReferDetailAccessibility({Accessibility}) {
+  // console.log(Definition)
+  const rendering = () => {
+    const result = [];
+    for (let i = 0; i < Accessibility.length; i++) {
+      result.push(<li key={i}>{Accessibility[i]}</li>);
+    }
+    return result;
+  };
+  return rendering();
+}
 
 class ReferDetail extends React.Component {
   componentDidMount() {
@@ -49,9 +74,14 @@ class ReferDetail extends React.Component {
                 <section className="refer__cont">
                   <div className="container">
                     <div className="refer__inner">
+
                       <div className="refer__table">
                         <h3>{location.state.title}</h3>
                         <p>{location.state.desc}</p>
+                        <div className="img__table">
+                          <div className="refer__img">
+                            <img src={location.state.image} />  
+                          </div>
                           <table className="table">
                             <thead>
                               <tr>
@@ -82,6 +112,38 @@ class ReferDetail extends React.Component {
                               </tr>
                             </tbody>
                           </table>
+                        </div>
+                      </div>
+                      <div className="refer__table">
+                        <table className="table">
+                          <thead></thead>
+                          <tbody>
+                            <tr>
+                              <th>정의</th>
+                              <td>
+                                <ReferDetailDefinition Definition={location.state.Definition} />
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>정의</th>
+                              <td>
+                                <ReferDetailAccessibility Accessibility={location.state.Accessibility} />
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>출처</th>
+                              <td><a href={location.state.link} target="_blank">{location.state.link}</a></td>
+                            </tr>
+                            <tr>
+                              <th>MDN</th>
+                              <td><a href={location.state.mdn} target="_blank">{location.state.mdn}</a></td>
+                            </tr>
+                            <tr>
+                              <th>W3C</th>
+                              <td><a href={location.state.w3c} target="_blank">{location.state.w3c}</a></td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </div>
                   </div>
