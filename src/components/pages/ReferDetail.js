@@ -38,6 +38,7 @@ function ReferDetailAccessibility({Accessibility}) {
 
 class ReferDetail extends React.Component {
   componentDidMount() {
+    document.querySelector("body").style.background = "#000";
     const {location, history} = this.props;
     if(location.state === undefined) {
       history.push("/reference");
@@ -75,7 +76,7 @@ class ReferDetail extends React.Component {
                   <div className="container">
                     <div className="refer__inner">
 
-                      <div className="refer__table">
+                      <div className="refer__table table01">
                         <h3>{location.state.title}</h3>
                         <p>{location.state.desc}</p>
                         <div className="img__table">
@@ -114,7 +115,7 @@ class ReferDetail extends React.Component {
                           </table>
                         </div>
                       </div>
-                      <div className="refer__table">
+                      <div className="refer__table table02">
                         <table className="table">
                           <thead></thead>
                           <tbody>

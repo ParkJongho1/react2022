@@ -1,15 +1,16 @@
 import React from 'react';
+import YoutubeList from './YoutubeList';
 
-function YoutubeCont() {
+function YoutubeCont(props) {
   return (
       <section className="youtube__cont">
         <div className="container">
             <div className="youtube__inner">
-                <h2>웹표준사이트<br/>만들기</h2>
+              <YoutubeList lists = {props.lists}/>
             </div>
         </div>
       </section>
   )
 }
 
-export default YoutubeCont;
+export default YoutubeCont; 

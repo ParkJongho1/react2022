@@ -8,7 +8,7 @@ import Loading from "../basics/Loading";
 import ReferCont from "../includes/ReferCont";
 import { gsap } from "gsap";
 import axios from "axios";
-import { element } from "prop-types";
+// import { element } from "prop-types";
 
 class Reference extends React.Component {
     state = {

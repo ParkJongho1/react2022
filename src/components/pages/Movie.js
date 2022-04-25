@@ -4,8 +4,7 @@ import Contents from "../layout/Contents"
 import ContTitle from "../layout/Title";
 import Footer from "../layout/Footer";
 import ContContact from "../layout/Contact";
-import YoutubeCont from "../includes/YoutubeCont";
-// import YoutubeSearch from "../includes/YoutubeSearch";
+import MovieCont from "../includes/MovieCont";
 import Loading from "../basics/Loading";
 import { gsap } from "gsap";
 import axios from "axios";
@@ -49,8 +48,8 @@ class Youtube extends React.Component {
         },10)
     }
 
-    getYoutubes = async () => {
-        const lists = await axios.get("https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=28&q=webstoryboy&key=AIzaSyBEEA07JBuc07ddSmLxwpbIKdKmcWxruWA&type=video")
+    getMovies = async () => {
+        const lists = await axios.get("https://api.themoviedb.org/3/search/movie?api_key=9176c3bc2c2c9880b4ee1d76226e2b27&query=bts")
 
         console.log(lists)
         this.setState({lists, isLoading: false});
@@ -61,7 +60,7 @@ class Youtube extends React.Component {
         setTimeout(() => {
             document.getElementById("loading").classList.remove("loading__active");
             document.querySelector("body").style.background = "#000";
-            this.getYoutubes();
+            this.getMovies();
         }, 2000)
     }
 
@@ -76,9 +75,9 @@ class Youtube extends React.Component {
                 <>
                     <Header />
                     <Contents>
-                        <ContTitle title={["Youtube", "reference"]}/>
-                            <YoutubeCont lists = {lists}>
-                            </YoutubeCont>
+                        <ContTitle title={["movie", "reference"]}/>
+                            <MovieCont lists = {lists}>
+                            </MovieCont>
                         <ContContact />
                     </Contents>
                     <Footer />
