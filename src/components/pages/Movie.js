@@ -49,7 +49,7 @@ class Youtube extends React.Component {
     }
 
     getMovies = async () => {
-        const lists = await axios.get("https://api.themoviedb.org/3/search/movie?api_key=9176c3bc2c2c9880b4ee1d76226e2b27&query=bts")
+        const lists = await axios.get("https://api.themoviedb.org/3/search/movie?api_key=9176c3bc2c2c9880b4ee1d76226e2b27&query=Marvel")
 
         console.log(lists)
         this.setState({lists, isLoading: false});
