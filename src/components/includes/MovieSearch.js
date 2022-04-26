@@ -20,7 +20,7 @@ function YoutubeSearch({ onSearch }) {
 
 
     return (
-    <div className="youtube__search container">
+    <div className="movie__search container">
         <h2>검색하기</h2>
         <input 
             ref={inputRef}
@@ -30,7 +30,7 @@ function YoutubeSearch({ onSearch }) {
         <button 
             type="submit" 
             onClick={onClick}>
-            검색
+            검색 
         </button>
     </div>
     )

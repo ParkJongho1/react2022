@@ -15,7 +15,7 @@ function YoutubeSearch({ onSearch }) {
     }
 
     const onClick = () => {
-        hanDleSearch();
+        hanDleSearch(); 
     }
 
 

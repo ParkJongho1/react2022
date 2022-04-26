@@ -20,29 +20,48 @@ function Movie(){
             setTimeout(() => {
                 gsap.to("#header", {
                     duration: 0.8,
-                    top: 0})
+                    top: 0,
+                });
                 gsap.to("#footer", {
-                    duration: 1.2,
-                    delay: 0.4,
-                    bottom: 0})
+                    duration: 0.8,
+                    bottom: 0,
+                    delay: 0.2,
+                });
                 gsap.to(".cont__title strong", {
-                    duration: 1.2,
-                    x: 0,
-                    opacity: 1,
-                    ease: "back.out(2.2)",
-                    delay: 0.6})
-                gsap.to(".cont__title em", {
-                    duration: 1.2,
-                    x: 0,
-                    opacity: 1,
-                    ease: "back.out(2.2)",
-                    delay: 0.8})
-                gsap.to(".movie__inner", {
-                    duration: 1.2,
-                    opacity: 1,
+                    duration: 0.7,
                     y: 0,
-                    ease: "back.out(2.2)",
-                    delay: 0.8}) 
+                    opacity: 1,
+                    delay: 1.0,
+                    ease: "power4.out"
+                });
+                gsap.to(".cont__title em", {
+                    duration: 0.7,
+                    y: 0,
+                    opacity: 1,
+                    delay: 1.3,
+                    ease: "power4.out"
+                });
+                gsap.to(".movie__inner", {
+                    duration: 0.7,
+                    y: 0,
+                    opacity: 1,
+                    delay: 1.5,
+                    ease: "power4.out"
+                });
+                gsap.to(".movie__search", {
+                    duration: 0.7,
+                    y: 0,
+                    opacity: 1,
+                    delay: 1.7,
+                    ease: "power4.out"
+                });
+                gsap.to(".movie__list", {
+                    duration: 0.7,
+                    y: 0,
+                    opacity: 1,
+                    delay: 1.9,
+                    ease: "power4.out"
+                });
             }, 2000);
         }, 2000);
     }
@@ -52,9 +71,9 @@ function Movie(){
             redirect: 'follow'
           };
           
-          fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_MOVIE_API}&query=${query}`, requestOptions)
-            .then(response => response.text())
-            .then(result => setVideos(result))
+          fetch(`https://api.themoviedb.org/3/search/movie?api_key=9176c3bc2c2c9880b4ee1d76226e2b27&query=${query}`, requestOptions)
+            .then(response => response.json())
+            .then(result => setVideos(result.results))
             .catch(error => console.log('error', error));
     }
     useEffect(()=>{
@@ -63,10 +82,10 @@ function Movie(){
             redirect: 'follow'
           };
           
-          fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_MOVIE_API}&query=Avengers`, requestOptions)
-            .then(response => response.text())
+          fetch(`https://api.themoviedb.org/3/search/movie?api_key=9176c3bc2c2c9880b4ee1d76226e2b27&query=Avengers`, requestOptions)
+            .then(response => response.json())
             .then(result => {
-                setVideos(videos);
+                setVideos(result.results)
                 mainAnimation();
             })
             .catch(error => console.log('error', error));
@@ -79,14 +98,14 @@ function Movie(){
             <Header />
             <Contents>
                 <Title title={["movie","reference"]} />
-                <section>
-                    <div className="container">
-                        <div className="movie__inner">
-                            <MovieSearch onSearch={search} />
-                            <MovieList videos={videos} />
+                    <section className="movie__cont">
+                        <div className="container">
+                            <div className="movie__inner">
+                                <MovieSearch onSearch={search} />
+                                <MovieList videos={videos} />
+                            </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
                 <ContactCont />
             </Contents>
             <Footer />
