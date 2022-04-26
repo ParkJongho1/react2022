@@ -2,7 +2,7 @@ import React from 'react';
 import Header from "../layout/Header";
 import Contents from "../layout/Contents";
 import Footer from "../layout/Footer";
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { gsap } from "gsap";
 
 // function ReferDetail(props) {
@@ -58,6 +58,13 @@ class ReferDetail extends React.Component {
             bottom: 0,
             delay: 0.2,
         });
+        gsap.to(".refer__inner", {
+          duration: 0.5,
+          y: 0,
+          opacity: 1,
+          delay: 1.6,
+          ease: "power3.out"
+      });
     }, 10)
   }
 
@@ -72,7 +79,7 @@ class ReferDetail extends React.Component {
         <>
             <Header color="light" />
               <Contents>
-                <section className="refer__cont">
+                <section className="refer__cont light">
                   <div className="container">
                     <div className="refer__inner">
 
@@ -81,7 +88,7 @@ class ReferDetail extends React.Component {
                         <p>{location.state.desc}</p>
                         <div className="img__table">
                           <div className="refer__img">
-                            <img src={location.state.image} />  
+                            <img src={location.state.image} alt={location.state.title}/>  
                           </div>
                           <table className="table">
                             <thead>
@@ -133,15 +140,15 @@ class ReferDetail extends React.Component {
                             </tr>
                             <tr>
                               <th>출처</th>
-                              <td><a href={location.state.link} target="_blank">{location.state.link}</a></td>
+                              <td><a href={location.state.link} target="_blank" rel="noreferrer">{location.state.link}</a></td>
                             </tr>
                             <tr>
                               <th>MDN</th>
-                              <td><a href={location.state.mdn} target="_blank">{location.state.mdn}</a></td>
+                              <td><a href={location.state.mdn} target="_blank" rel="noreferrer">{location.state.mdn}</a></td>
                             </tr>
                             <tr>
                               <th>W3C</th>
-                              <td><a href={location.state.w3c} target="_blank">{location.state.w3c}</a></td>
+                              <td><a href={location.state.w3c} target="_blank" rel="noreferrer">{location.state.w3c}</a></td>
                             </tr>
                           </tbody>
                         </table>

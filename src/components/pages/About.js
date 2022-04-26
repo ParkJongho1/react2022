@@ -71,7 +71,7 @@ class About extends React.Component {
     componentDidMount(){
         setTimeout(() => { 
             document.getElementById("loading").classList.remove("loading__active");
-            document.querySelector("body").style.background = "#f0EEEB";
+            document.querySelector("body").style.background = "#000";
             this.getAbouts();
         }, 2000);
     }
@@ -83,16 +83,16 @@ class About extends React.Component {
         return (
             <>
            {isLoading ? (
-               <Loading color="light"/>
+               <Loading />
                ) : (
                     <>
-                        <Header color="light" />
+                        <Header />
                         <Contents>
-                            <ContTitle title={["About","me","light"]} />
-                            <AboutCont abouts={abouts} color="light"/>
+                            <ContTitle title={["About","me"]} />
+                            <AboutCont abouts={abouts} />
                             <ContContact />
                         </Contents>
-                        <Footer color="light" />
+                        <Footer />
                     </>                   
                )} 
             </>

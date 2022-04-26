@@ -40,13 +40,13 @@ class Reference extends React.Component {
                 delay: 1.3,
                 ease: "power4.out"
             });
-            // gsap.to(".refer__inner", {
-            //     duration: 0.5,
-            //     y: 0,
-            //     opacity: 1,
-            //     delay: 1.6,
-            //     ease: "power3.out"
-            // });
+            gsap.to(".refer__inner", {
+                duration: 0.5,
+                y: 0,
+                opacity: 1,
+                delay: 1.6,
+                ease: "power3.out"
+            });
         }, 10)
     }
     getRefers = async () => {
@@ -55,8 +55,11 @@ class Reference extends React.Component {
                 data: {htmlRefer},
             },
         } = await axios.get("https://parkjongho1.github.io/react2022/src/assets/json/reference.json");
-        this.setState({ refers: htmlRefer,  isLoading: false,})
-        this.mainAnimation();
+        setTimeout(()=>{
+            this.setState({ refers: htmlRefer,  isLoading: false,})
+            this.mainAnimation();
+        },2000)
+      
     }
 
     componentDidMount(){

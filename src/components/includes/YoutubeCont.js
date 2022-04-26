@@ -6,6 +6,7 @@ function YoutubeCont(props) {
       <section className="youtube__cont">
         <div className="container">
             <div className="youtube__inner">
+              {/* <YoutubeSearch /> */}
               <YoutubeList lists = {props.lists}/>
             </div>
         </div>
