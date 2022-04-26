@@ -72,7 +72,7 @@ function Youtube() {
             redirect: 'follow'
           };
           
-          fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=28&q=${query}&key=${process.env.REACT_APP_API}&type=video`, requestOptions)
+          fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=28&q=${query}&key=${process.env.REACT_APP_YOUTUBE_API}&type=video`, requestOptions)
             .then(response => response.json())
             .then(result =>setVideos(result.items))
             .catch(error => console.log('error', error));
@@ -84,7 +84,7 @@ function Youtube() {
             redirect: 'follow'
             };
             
-            fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=28&q=webstoryboy&key=${process.env.REACT_APP_API}&type=video`, requestOptions)
+            fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=28&q=webstoryboy&key=${process.env.REACT_APP_YOUTUBE_API}&type=video`, requestOptions)
             .then(response => response.json())
             .then(result => {
                 setVideos(result.items)

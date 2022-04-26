@@ -70,7 +70,6 @@ function Movie(){
             method: 'GET',
             redirect: 'follow'
           };
-         
           fetch(`https://api.themoviedb.org/3/search/movie?api_key= ${process.env.REACT_MOVIE_API}&query=${query}`, requestOptions)
             .then(response => response.json())
             .then(result => setVideos(result.results))
@@ -82,7 +81,7 @@ function Movie(){
             redirect: 'follow'
           };
           
-          fetch(`https://api.themoviedb.org/3/search/movie?api_key= ${process.env.REACT_MOVIE_API}&query=Avengers`, requestOptions)
+          fetch(`https://api.themoviedb.org/3/search/movie?api_key= ${process.env.REACT_MOVIE_API}&query=gAvengers`, requestOptions)
             .then(response => response.json())
             .then(result => {
                 setVideos(result.results)
