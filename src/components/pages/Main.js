@@ -86,7 +86,6 @@ class Main extends React.Component {
 
     render(){
         const {isLoading} = this.state;
-
         return (
             <>
            {isLoading ? (

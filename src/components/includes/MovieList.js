@@ -1,25 +1,19 @@
-import React from 'react';
+import React from 'react'
+import MovieItem from "./MovieItem"
 
-function MovieItem(props) {
-    return (
-        <li>
-            <img src={`https://image.tmdb.org/t/p/w500/${props.video.poster_path}`} alt={props.video.original_title} />
-            <p className="title">{props.video.original_title}</p>
-        </li> 
-        // {`https://image.tmdb.org/t/p/w500/"${props.video.poster_path}`}
-    )
-}
 
 function MovieList(props) {
-    console.log(props.lists.data.results)
+    console.log(props)
   return (
-    <div className="movie__list">
-            <ul>
-                {props.lists.data.results.map((list, index) => (
-                    <MovieItem key={index} video={list} />
-                ))}
-            </ul>
-        </div>      
+        <ul>
+            {props.videos.map((list,index) => (
+                <MovieItem 
+                    key={index}
+                    results={list}
+                />
+            ))}
+        </ul>
   )
 }
-export default MovieList;
+
+export default MovieList
