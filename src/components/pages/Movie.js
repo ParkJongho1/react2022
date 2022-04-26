@@ -70,8 +70,8 @@ function Movie(){
             method: 'GET',
             redirect: 'follow'
           };
-          
-          fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_MOVIE_API}&query=${query}`, requestOptions)
+        //   ${process.env.REACT_MOVIE_API}
+          fetch(`https://api.themoviedb.org/3/search/movie?api_key=9176c3bc2c2c9880b4ee1d76226e2b27&query=${query}`, requestOptions)
             .then(response => response.json())
             .then(result => setVideos(result.results))
             .catch(error => console.log('error', error));
@@ -82,7 +82,7 @@ function Movie(){
             redirect: 'follow'
           };
           
-          fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_MOVIE_API}&query=Avengers`, requestOptions)
+          fetch(`https://api.themoviedb.org/3/search/movie?api_key=9176c3bc2c2c9880b4ee1d76226e2b27&query=Avengers`, requestOptions)
             .then(response => response.json())
             .then(result => {
                 setVideos(result.results)
