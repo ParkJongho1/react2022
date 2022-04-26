@@ -3,9 +3,10 @@ import React from 'react';
 function MovieItem(props) {
     return (
         <li>
-            {/* <a href={`http://www.youtube.com/watch?v=${props.results.id.videoId}`} target="_blank" rel="noreferrer"></a> */}
-            <img src={`https://image.tmdb.org/t/p/w500/${props.results.poster_path}`} alt="" />
-            <p className="title">{props.results.title}</p>
+            <a href={`https://www.themoviedb.org/movie/${props.results.id}`} target="_blank" rel="noreferrer">
+                <img src={`https://image.tmdb.org/t/p/w500/${props.results.poster_path}`} alt="" />
+                <p className="title">{props.results.title}</p>
+            </a>
         </li>
     )
 }
