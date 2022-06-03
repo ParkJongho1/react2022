@@ -31,18 +31,20 @@
   }
 }
 .tabs {
+  margin-bottom: 2vw;
   li {
-    color: rgb(173, 163, 163);
+    color: rgb(141, 139, 139);
     display: inline-block;
     font-size: 2vw;
-    padding: 10px 20px;
     border: 2px solid #000;
     cursor: pointer;
     font-family: var(--Chosungilbo);
+    margin-right: 2vw;
   }
   li.active {
     background-color: #000;
     color: #fff;
+    border-bottom: 2px solid #fff;
   }
 }
 
