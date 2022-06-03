@@ -10,7 +10,7 @@ import CssRefer from "./CssRefer";
 import { gsap } from "gsap";
 // import { element } from "prop-types";
 
-const obj = {
+const referjson = {
   0: <HtmlRefer />,
   1: <CssRefer />,
 };
@@ -94,19 +94,21 @@ class Reference extends React.Component {
                   <div className="refer__inner">
                     <ul className="tabs">
                       <li
-                        className={this.state.isActive ? "active" : ""}
+                        className={this.state.isActive ? "" : "active"}
                         onClick={() => this.clickHandler(0)}
                       >
                         HTML
                       </li>
                       <li
-                        className={this.state.isActive ? "" : "active"}
+                        className={this.state.isActive ? "active" : ""}
                         onClick={() => this.clickHandler(1)}
                       >
                         CSS
                       </li>
                     </ul>
-                    <ul className="refer__list">{obj[this.state.activeId]}</ul>
+                    <ul className="refer__list">
+                      {referjson[this.state.activeId]}
+                    </ul>
                   </div>
                 </div>
               </section>
